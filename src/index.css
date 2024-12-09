@@ -1,0 +1,62 @@
+@import url('./styles/reset.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css');
+@import url('./styles/mdGithub.css');
+
+html {
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+}
+
+[data-theme='light'] {
+  --background: #ffffff; /* Белый фон */
+  --text-primary: #1f2328; /* Основной текст */
+  --text-secondary: #59636e; /* Вторичный текст */
+  --accent: #0969da; /* Акцентный синий */
+  --accent-hover: #0550ae; /* Тёмно-синий при наведении */
+  --border: #d1d9e0; /* Светло-серый для границ */
+}
+
+[data-theme='dark'] {
+  --background: #0d1117; /* Тёмный фон */
+  --text-primary: #f0f6fc; /* Основной текст */
+  --text-secondary: #9198a1; /* Вторичный текст */
+  --accent: #4493f8; /* Акцентный голубой */
+  --accent-hover: #1f6feb; /* Синий при наведении */
+  --border: #3d444d; /* Тёмно-серый для границ */
+}
+
+a.toc-anchor {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+a.toc-anchor:active {
+  color: var(--accent);
+}
+
+a.toc-anchor:focus {
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--background);
+  transition: all 0.5s ease-in-out;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+}
