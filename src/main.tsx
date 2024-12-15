@@ -3,18 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import StoreProvider from './context/StoreProvider.tsx'
-import { spy } from 'mobx'
-
-spy((event) => {
-  if (event.type.includes('action')) {
-    console.log(event)
-  }
-})
+import ThemeProvider from './context/themeProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <StoreProvider>
-      <App />
-    </StoreProvider>
+    <ThemeProvider>
+      <StoreProvider>
+        <App />
+      </StoreProvider>
+    </ThemeProvider>
   </StrictMode>
 )

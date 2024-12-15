@@ -1,10 +1,13 @@
-import { useSwitchTheme } from '@/hooks/useSwitchTheme'
-import { useTheme } from '@/hooks/useTheme'
+import ThemeContext from '@/context/themeContext'
 import { motion } from 'motion/react'
+import { useContext } from 'react'
 
 const ThemeSwitcher = () => {
-  useTheme()
-  const [toggleTheme, currentTheme] = useSwitchTheme()
+  const themeContext = useContext(ThemeContext)
+
+  if (!themeContext) throw new Error('no theme context')
+
+  const { theme: currentTheme, toggleTheme } = themeContext
 
   return (
     <motion.button
